@@ -1,8 +1,7 @@
+import 'package:hive_db/services/local_auth_service.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:hive_db/homescreen.dart';
-import 'package:path_provider/path_provider.dart';
-
 import 'models/notes_model.dart';
 
 void main() async {
@@ -22,13 +21,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hive DB',
+      title: 'QuickNotes',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Homescreen(),
+      theme: ThemeData.dark(useMaterial3: true),
+      home: const LocalAuthScreen(),
     );
   }
 }
